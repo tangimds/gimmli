@@ -11,7 +11,6 @@ require("dotenv").config();
 
 const db = monk(process.env.MONGODB_URI);
 const domain = process.env.DOMAIN_URL;
-console.log({ db, domain });
 
 const urls = db.get("urls");
 urls.createIndex({ slug: 1 }, { unique: true });
